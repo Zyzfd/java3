@@ -1,19 +1,16 @@
-import java.awt.event.*;
+import one.one;
+import two.*;
 
-public class zyzf extends KeyAdapter{
+public class zyzf {
 
     public static void main(String[] args) {
-        System.out.println("Выберите размерность массива:");
-        System.out.println("1) Одномерный массив:");
-        System.out.println("2) Двумерный массив:");
-
+        // System.out.println("Выберите размерность массива:");
+        // System.out.println("1) Одномерный массив:");
+        // System.out.println("2) Двумерный массив:");
+        System.out.printf("\nОтвет: %d", one.one(5));
+        System.out.printf("\n\n");
+        System.out.printf("\nОтвет: %d", two.krat_2(5));
+        System.out.printf("\n\n");
+        two.two(5);
     }
-
-    @Override
-    public void keyTyped(KeyEvent event) {
-        if (event.getKeyCode()==KeyEvent.VK_W) {
-            System.out.println("Ok");
-        }
-    }
-
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch zyzf",
+            "request": "launch",
+            "mainClass": "zyzf",
+            "projectName": "java3_318ce50e"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
