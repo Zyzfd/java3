@@ -4,35 +4,35 @@ import one.one;
 import java.util.Random;
 
 public class two extends one{
-    private static int[][] mass_sq;
-    private static int[][] mass;
+    private int[][] mass_sq;
+    private int[][] mass;
 
-    public static int[][] generate_rand_square(int n) {
+    public int[][] generate_rand_square(int n) {
         mass_sq = new int[n][n];
         for (int i = 0; i < n; i++) {
-            mass_sq[i] = generate_rand(mass_sq[i]);
+            mass_sq[i] = super.generate_rand(mass_sq[i]);
         }
         return mass_sq;
     }
 
-    public static int[][] generate_rand_nonsquare(int x) {
+    public int[][] generate_rand_nonsquare(int x) {
         mass = new int[x][];
         Random rand = new Random();
         for (int i = 0; i < x; i++) {
             mass[i] = new int[rand.nextInt(10)];
-            mass[i] = generate_rand(mass[i]);
+            mass[i] = super.generate_rand(mass[i]);
         }
         return mass;
     }
 
-    public static void print_dvummass(int[][] mass) {
+    public void print_dvummass(int[][] mass) {
         for (int i = 0; i < mass.length; i++) {
             System.out.printf("\n");
-            print_mass(mass[i]);
+            super.print_mass(mass[i]);
         }
     }
 
-    public static void two(int x) {
+    public void two(int x) {
         generate_rand_square(x);
         print_dvummass(mass_sq);
         int chet = 0;
@@ -47,9 +47,10 @@ public class two extends one{
             }
         }
         int temp[] = new int[x];
-        
+        System.out.printf("\n%d", nechet);
+        System.out.printf("\n%d", chet);
         if (chet > nechet) {
-            // System.out.printf("\nЧетн");
+            
             for (int i = 0; i < x; i++) {
                 temp[i] = mass_sq[i][i];
             }
@@ -60,7 +61,7 @@ public class two extends one{
                 mass_sq[i][i] = sorted[i];
             }
         } else {
-            // System.out.printf("\nНечетн");
+            
             int ind = 0;
             int stolb = mass_sq[0].length-1;
             for (int i = 0; i < x; i++) {
@@ -96,7 +97,7 @@ public class two extends one{
         print_dvummass(mass_sq);
     }
 
-    public static int krat_2(int x) {
+    public int krat_2(int x) {
         print_dvummass(generate_rand_nonsquare(x));
         int max = 0;
         int max_index = 0;
@@ -106,7 +107,7 @@ public class two extends one{
                 max_index = i;
             }
         }
-        return krat(mass[max_index]);
+        return super.krat(mass[max_index]);
     }
     
 }
